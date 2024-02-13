@@ -21,17 +21,17 @@ lib.registerContext({
    menu = "open_food_shop",
    options = {
       {
-         title = "Apple",
-         description = "grab a couple of apple",
+         title = "Burger",
+         description = "grab a couple of burger",
          image =
-         "https://th.bing.com/th/id/R.fa020e00e8fa2eafac81b41f561fc2da?rik=H1ijCVvvptkPqw&riu=http%3a%2f%2fpurepng.com%2fpublic%2fuploads%2flarge%2fpurepng.com-red-appleapplemalus-domesticafruitdeliciousred-apple-170152716492043huf.png&ehk=WrG97S3qgK%2fSTkz0HfXM33dWeuAe92PbLwCo%2fh0Ow7A%3d&risl=1&pid=ImgRaw&r=0",
+         "https://th.bing.com/th/id/OIP.Xpa7p1XJIYLs4HX5jjkHmwHaGJ?rs=1&pid=ImgDetMain",
          metadata = {
-            { label = 'Name',  value = 'Apple' },
+            { label = 'Name',  value = 'Burger' },
             { label = 'Price', value = '$' .. 20 }
          },
          onSelect = function()
             -- print("You just bought some Apples")
-            TriggerServerEvent("food_shop_buy_apple")
+            TriggerServerEvent("food_shop_buy", 'burger', 20)
          end,
       },
       {
@@ -44,6 +44,7 @@ lib.registerContext({
             { label = 'Price', value = '$' .. 5 }
          },
          onSelect = function()
+            TriggerServerEvent("food_shop_buy", 'water', 10)
             print("You just bought some Waters")
          end,
       },
